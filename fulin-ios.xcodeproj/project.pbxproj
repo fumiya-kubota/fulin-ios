@@ -1,0 +1,685 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		17E7F200D1FA29956B03D538 /* Pods_fulin_iosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39957F103B9C490B3FEB0F06 /* Pods_fulin_iosTests.framework */; };
+		365D438B1D2C098F0046EB71 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365D438A1D2C098F0046EB71 /* AppDelegate.swift */; };
+		365D438D1D2C098F0046EB71 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365D438C1D2C098F0046EB71 /* ViewController.swift */; };
+		365D43901D2C098F0046EB71 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 365D438E1D2C098F0046EB71 /* Main.storyboard */; };
+		365D43921D2C098F0046EB71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 365D43911D2C098F0046EB71 /* Assets.xcassets */; };
+		365D43951D2C098F0046EB71 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 365D43931D2C098F0046EB71 /* LaunchScreen.storyboard */; };
+		365D43A01D2C098F0046EB71 /* fulin_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365D439F1D2C098F0046EB71 /* fulin_iosTests.swift */; };
+		365D43AB1D2C098F0046EB71 /* fulin_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365D43AA1D2C098F0046EB71 /* fulin_iosUITests.swift */; };
+		697D6499572A69BE8FDACAD5 /* Pods_fulin_iosUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A97F6DFCCA54ECCA66198B06 /* Pods_fulin_iosUITests.framework */; };
+		F51DB88D52959F118CAA8150 /* Pods_fulin_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2DF3C75AAB511A1800C267A /* Pods_fulin_ios.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		365D439C1D2C098F0046EB71 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 365D437F1D2C098F0046EB71 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 365D43861D2C098F0046EB71;
+			remoteInfo = "fulin-ios";
+		};
+		365D43A71D2C098F0046EB71 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 365D437F1D2C098F0046EB71 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 365D43861D2C098F0046EB71;
+			remoteInfo = "fulin-ios";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0B639FD979FA89756D6FC351 /* Pods-fulin-iosUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fulin-iosUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-fulin-iosUITests/Pods-fulin-iosUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		2AF0272A717EBB88AE45274A /* Pods-fulin-iosUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fulin-iosUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-fulin-iosUITests/Pods-fulin-iosUITests.release.xcconfig"; sourceTree = "<group>"; };
+		365D43871D2C098F0046EB71 /* fulin-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "fulin-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		365D438A1D2C098F0046EB71 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		365D438C1D2C098F0046EB71 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		365D438F1D2C098F0046EB71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		365D43911D2C098F0046EB71 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		365D43941D2C098F0046EB71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		365D43961D2C098F0046EB71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		365D439B1D2C098F0046EB71 /* fulin-iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "fulin-iosTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		365D439F1D2C098F0046EB71 /* fulin_iosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fulin_iosTests.swift; sourceTree = "<group>"; };
+		365D43A11D2C098F0046EB71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		365D43A61D2C098F0046EB71 /* fulin-iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "fulin-iosUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		365D43AA1D2C098F0046EB71 /* fulin_iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fulin_iosUITests.swift; sourceTree = "<group>"; };
+		365D43AC1D2C098F0046EB71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		39957F103B9C490B3FEB0F06 /* Pods_fulin_iosTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fulin_iosTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3DD3639E8F0165A823C16780 /* Pods-fulin-iosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fulin-iosTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-fulin-iosTests/Pods-fulin-iosTests.release.xcconfig"; sourceTree = "<group>"; };
+		69B6E2C2E0A8A22E84D94324 /* Pods-fulin-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fulin-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-fulin-ios/Pods-fulin-ios.release.xcconfig"; sourceTree = "<group>"; };
+		6BB6124A8CA0282B07124A80 /* Pods-fulin-iosTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fulin-iosTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-fulin-iosTests/Pods-fulin-iosTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8CE44079845AD5810CE91417 /* Pods-fulin-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fulin-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-fulin-ios/Pods-fulin-ios.debug.xcconfig"; sourceTree = "<group>"; };
+		A97F6DFCCA54ECCA66198B06 /* Pods_fulin_iosUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fulin_iosUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2DF3C75AAB511A1800C267A /* Pods_fulin_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fulin_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		365D43841D2C098F0046EB71 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F51DB88D52959F118CAA8150 /* Pods_fulin_ios.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		365D43981D2C098F0046EB71 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17E7F200D1FA29956B03D538 /* Pods_fulin_iosTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		365D43A31D2C098F0046EB71 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				697D6499572A69BE8FDACAD5 /* Pods_fulin_iosUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2A5DFE8D37B1F5B2B18BB557 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8CE44079845AD5810CE91417 /* Pods-fulin-ios.debug.xcconfig */,
+				69B6E2C2E0A8A22E84D94324 /* Pods-fulin-ios.release.xcconfig */,
+				6BB6124A8CA0282B07124A80 /* Pods-fulin-iosTests.debug.xcconfig */,
+				3DD3639E8F0165A823C16780 /* Pods-fulin-iosTests.release.xcconfig */,
+				0B639FD979FA89756D6FC351 /* Pods-fulin-iosUITests.debug.xcconfig */,
+				2AF0272A717EBB88AE45274A /* Pods-fulin-iosUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		365D437E1D2C098F0046EB71 = {
+			isa = PBXGroup;
+			children = (
+				365D43891D2C098F0046EB71 /* fulin-ios */,
+				365D439E1D2C098F0046EB71 /* fulin-iosTests */,
+				365D43A91D2C098F0046EB71 /* fulin-iosUITests */,
+				365D43881D2C098F0046EB71 /* Products */,
+				2A5DFE8D37B1F5B2B18BB557 /* Pods */,
+				D1E11DB67FEAD06271E0D4A7 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		365D43881D2C098F0046EB71 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				365D43871D2C098F0046EB71 /* fulin-ios.app */,
+				365D439B1D2C098F0046EB71 /* fulin-iosTests.xctest */,
+				365D43A61D2C098F0046EB71 /* fulin-iosUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		365D43891D2C098F0046EB71 /* fulin-ios */ = {
+			isa = PBXGroup;
+			children = (
+				365D438A1D2C098F0046EB71 /* AppDelegate.swift */,
+				365D438C1D2C098F0046EB71 /* ViewController.swift */,
+				365D438E1D2C098F0046EB71 /* Main.storyboard */,
+				365D43911D2C098F0046EB71 /* Assets.xcassets */,
+				365D43931D2C098F0046EB71 /* LaunchScreen.storyboard */,
+				365D43961D2C098F0046EB71 /* Info.plist */,
+			);
+			path = "fulin-ios";
+			sourceTree = "<group>";
+		};
+		365D439E1D2C098F0046EB71 /* fulin-iosTests */ = {
+			isa = PBXGroup;
+			children = (
+				365D439F1D2C098F0046EB71 /* fulin_iosTests.swift */,
+				365D43A11D2C098F0046EB71 /* Info.plist */,
+			);
+			path = "fulin-iosTests";
+			sourceTree = "<group>";
+		};
+		365D43A91D2C098F0046EB71 /* fulin-iosUITests */ = {
+			isa = PBXGroup;
+			children = (
+				365D43AA1D2C098F0046EB71 /* fulin_iosUITests.swift */,
+				365D43AC1D2C098F0046EB71 /* Info.plist */,
+			);
+			path = "fulin-iosUITests";
+			sourceTree = "<group>";
+		};
+		D1E11DB67FEAD06271E0D4A7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C2DF3C75AAB511A1800C267A /* Pods_fulin_ios.framework */,
+				39957F103B9C490B3FEB0F06 /* Pods_fulin_iosTests.framework */,
+				A97F6DFCCA54ECCA66198B06 /* Pods_fulin_iosUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		365D43861D2C098F0046EB71 /* fulin-ios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 365D43AF1D2C098F0046EB71 /* Build configuration list for PBXNativeTarget "fulin-ios" */;
+			buildPhases = (
+				7E2373737EAD55DB1A2609A5 /* [CP] Check Pods Manifest.lock */,
+				365D43831D2C098F0046EB71 /* Sources */,
+				365D43841D2C098F0046EB71 /* Frameworks */,
+				365D43851D2C098F0046EB71 /* Resources */,
+				C45AC50E339E0C319995C62F /* [CP] Embed Pods Frameworks */,
+				6D76C070CB8E92A72170B1A9 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "fulin-ios";
+			productName = "fulin-ios";
+			productReference = 365D43871D2C098F0046EB71 /* fulin-ios.app */;
+			productType = "com.apple.product-type.application";
+		};
+		365D439A1D2C098F0046EB71 /* fulin-iosTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 365D43B21D2C098F0046EB71 /* Build configuration list for PBXNativeTarget "fulin-iosTests" */;
+			buildPhases = (
+				08156ED2B2B2987942A11066 /* [CP] Check Pods Manifest.lock */,
+				365D43971D2C098F0046EB71 /* Sources */,
+				365D43981D2C098F0046EB71 /* Frameworks */,
+				365D43991D2C098F0046EB71 /* Resources */,
+				CAB634F0DE9270174642176D /* [CP] Embed Pods Frameworks */,
+				D9C33F1995C21DE9A036F737 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				365D439D1D2C098F0046EB71 /* PBXTargetDependency */,
+			);
+			name = "fulin-iosTests";
+			productName = "fulin-iosTests";
+			productReference = 365D439B1D2C098F0046EB71 /* fulin-iosTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		365D43A51D2C098F0046EB71 /* fulin-iosUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 365D43B51D2C098F0046EB71 /* Build configuration list for PBXNativeTarget "fulin-iosUITests" */;
+			buildPhases = (
+				ACE4325B68F843D722A9B115 /* [CP] Check Pods Manifest.lock */,
+				365D43A21D2C098F0046EB71 /* Sources */,
+				365D43A31D2C098F0046EB71 /* Frameworks */,
+				365D43A41D2C098F0046EB71 /* Resources */,
+				B78E116D32CDB6993A196FF3 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				365D43A81D2C098F0046EB71 /* PBXTargetDependency */,
+			);
+			name = "fulin-iosUITests";
+			productName = "fulin-iosUITests";
+			productReference = 365D43A61D2C098F0046EB71 /* fulin-iosUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		365D437F1D2C098F0046EB71 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = sasau;
+				TargetAttributes = {
+					365D43861D2C098F0046EB71 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					365D439A1D2C098F0046EB71 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 365D43861D2C098F0046EB71;
+					};
+					365D43A51D2C098F0046EB71 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 365D43861D2C098F0046EB71;
+					};
+				};
+			};
+			buildConfigurationList = 365D43821D2C098F0046EB71 /* Build configuration list for PBXProject "fulin-ios" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 365D437E1D2C098F0046EB71;
+			productRefGroup = 365D43881D2C098F0046EB71 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				365D43861D2C098F0046EB71 /* fulin-ios */,
+				365D439A1D2C098F0046EB71 /* fulin-iosTests */,
+				365D43A51D2C098F0046EB71 /* fulin-iosUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		365D43851D2C098F0046EB71 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				365D43951D2C098F0046EB71 /* LaunchScreen.storyboard in Resources */,
+				365D43921D2C098F0046EB71 /* Assets.xcassets in Resources */,
+				365D43901D2C098F0046EB71 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		365D43991D2C098F0046EB71 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		365D43A41D2C098F0046EB71 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		08156ED2B2B2987942A11066 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6D76C070CB8E92A72170B1A9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-fulin-ios/Pods-fulin-ios-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7E2373737EAD55DB1A2609A5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		ACE4325B68F843D722A9B115 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B78E116D32CDB6993A196FF3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-fulin-iosUITests/Pods-fulin-iosUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C45AC50E339E0C319995C62F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-fulin-ios/Pods-fulin-ios-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CAB634F0DE9270174642176D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-fulin-iosTests/Pods-fulin-iosTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D9C33F1995C21DE9A036F737 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-fulin-iosTests/Pods-fulin-iosTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		365D43831D2C098F0046EB71 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				365D438D1D2C098F0046EB71 /* ViewController.swift in Sources */,
+				365D438B1D2C098F0046EB71 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		365D43971D2C098F0046EB71 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				365D43A01D2C098F0046EB71 /* fulin_iosTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		365D43A21D2C098F0046EB71 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				365D43AB1D2C098F0046EB71 /* fulin_iosUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		365D439D1D2C098F0046EB71 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 365D43861D2C098F0046EB71 /* fulin-ios */;
+			targetProxy = 365D439C1D2C098F0046EB71 /* PBXContainerItemProxy */;
+		};
+		365D43A81D2C098F0046EB71 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 365D43861D2C098F0046EB71 /* fulin-ios */;
+			targetProxy = 365D43A71D2C098F0046EB71 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		365D438E1D2C098F0046EB71 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				365D438F1D2C098F0046EB71 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		365D43931D2C098F0046EB71 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				365D43941D2C098F0046EB71 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		365D43AD1D2C098F0046EB71 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		365D43AE1D2C098F0046EB71 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		365D43B01D2C098F0046EB71 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8CE44079845AD5810CE91417 /* Pods-fulin-ios.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "fulin-ios/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.ssuwam.fulin-ios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		365D43B11D2C098F0046EB71 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 69B6E2C2E0A8A22E84D94324 /* Pods-fulin-ios.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "fulin-ios/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.ssuwam.fulin-ios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		365D43B31D2C098F0046EB71 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6BB6124A8CA0282B07124A80 /* Pods-fulin-iosTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "fulin-iosTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.ssuwam.fulin-iosTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/fulin-ios.app/fulin-ios";
+			};
+			name = Debug;
+		};
+		365D43B41D2C098F0046EB71 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3DD3639E8F0165A823C16780 /* Pods-fulin-iosTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "fulin-iosTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.ssuwam.fulin-iosTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/fulin-ios.app/fulin-ios";
+			};
+			name = Release;
+		};
+		365D43B61D2C098F0046EB71 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0B639FD979FA89756D6FC351 /* Pods-fulin-iosUITests.debug.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = "fulin-iosUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.ssuwam.fulin-iosUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "fulin-ios";
+			};
+			name = Debug;
+		};
+		365D43B71D2C098F0046EB71 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2AF0272A717EBB88AE45274A /* Pods-fulin-iosUITests.release.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = "fulin-iosUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.ssuwam.fulin-iosUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "fulin-ios";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		365D43821D2C098F0046EB71 /* Build configuration list for PBXProject "fulin-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				365D43AD1D2C098F0046EB71 /* Debug */,
+				365D43AE1D2C098F0046EB71 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		365D43AF1D2C098F0046EB71 /* Build configuration list for PBXNativeTarget "fulin-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				365D43B01D2C098F0046EB71 /* Debug */,
+				365D43B11D2C098F0046EB71 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		365D43B21D2C098F0046EB71 /* Build configuration list for PBXNativeTarget "fulin-iosTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				365D43B31D2C098F0046EB71 /* Debug */,
+				365D43B41D2C098F0046EB71 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		365D43B51D2C098F0046EB71 /* Build configuration list for PBXNativeTarget "fulin-iosUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				365D43B61D2C098F0046EB71 /* Debug */,
+				365D43B71D2C098F0046EB71 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 365D437F1D2C098F0046EB71 /* Project object */;
+}
