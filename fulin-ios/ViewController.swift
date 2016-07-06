@@ -8,8 +8,6 @@
 
 import UIKit
 import SVProgressHUD
-
-
 import UIKit
 
 enum Colors: Int {
@@ -103,10 +101,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             alert.addAction(UIAlertAction.init(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
             alert.addAction(UIAlertAction.init(title: "OK", style: UIAlertActionStyle.Default, handler: { _ in
                 self.textView.text = text
+                self.wornings = []
+                self.update()
             }))
             self.presentViewController(alert, animated: true, completion: nil)
         } else {
             textView.text = text
+            self.wornings = []
+            self.update()
         }
     }
 
@@ -150,7 +152,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 return
             }
             let array: [AnyObject] = try! NSJSONSerialization.JSONObjectWithData(data_, options: NSJSONReadingOptions.MutableContainers) as! [AnyObject]
-            SVProgressHUD.dismiss()
             
             var wornings: [LintingWorning] = []
             for dict in array {
@@ -166,6 +167,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 wornings.append(LintingWorning.init(line: line, column: column, message: message))
             }
             self.wornings = wornings
+            if wornings.count == 0 {
+                SVProgressHUD.showSuccessWithStatus("良いんじゃないでしょうか！")
+                SVProgressHUD.dismissWithDelay(0.8)
+            } else {
+                SVProgressHUD.dismiss()
+            }
+
             
             dispatch_sync(dispatch_get_main_queue(), {
                 self.update()
@@ -221,7 +229,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         rect.origin.y -= textView.frame.height / 2
         rect.origin.x = 0
         textView.setContentOffset(rect.origin, animated: true)
-
         let attributedText = NSMutableAttributedString.init(string: textView.text, attributes: [NSFontAttributeName: UIFont.systemFontOfSize(15)])
         attributedText.addAttributes([
                 NSBackgroundColorAttributeName: UIColor.init(color: .HighlightMazenta)
@@ -237,8 +244,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         UIView.beginAnimations("keyboardWillShow", context: nil)
         UIView.setAnimationCurve(curve!)
         UIView.setAnimationDuration(duration)
-        textView.contentInset.bottom = keyboardFrame.height + 40 + (worningsViewBottomSpace.constant + worningsViewHeight.constant)
-        textView.scrollIndicatorInsets.bottom = keyboardFrame.height + (worningsViewBottomSpace.constant + worningsViewHeight.constant)
+        textView.contentInset.bottom = keyboardFrame.height + 40 - (worningsViewBottomSpace.constant + worningsViewHeight.constant)
+        textView.scrollIndicatorInsets.bottom = keyboardFrame.height - (worningsViewBottomSpace.constant + worningsViewHeight.constant)
         UIView.commitAnimations()
     }
     
