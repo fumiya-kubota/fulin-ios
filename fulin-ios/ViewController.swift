@@ -45,7 +45,7 @@ class LintingWorningCell: UITableViewCell {
         textContainer.size = containerSize;
         
         let textStorage = NSTextStorage.init(attributedString: NSAttributedString.init(string: lintingWorning.message, attributes: [
-            NSFontAttributeName: UIFont.systemFontOfSize(18)
+            NSFontAttributeName: UIFont.systemFontOfSize(17)
         ]))
         textStorage.addLayoutManager(layoutManager)
         layoutManager .glyphRangeForTextContainer(textContainer)
@@ -70,7 +70,7 @@ class LintingWorningCell: UITableViewCell {
     }
 }
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController, UITextViewDelegate, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var worningsViewHeight: NSLayoutConstraint!
     @IBOutlet weak var worningsViewBottomSpace: NSLayoutConstraint!
     @IBOutlet weak var worningsTableView: UITableView!
@@ -83,6 +83,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        textView.delegate = self
         worningsTableView.delegate = self
         worningsTableView.dataSource = self
         
@@ -90,6 +91,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.keyboardWillHidden(_:)), name: UIKeyboardWillHideNotification, object: nil)
         
         textView.inputAccessoryView = keyboardView
+    }
+    
+    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+        textView.typingAttributes = [NSFontAttributeName: UIFont.systemFontOfSize(17)]
+        return true
     }
 
     @IBAction func pasteButtonPushed(sender: AnyObject) {
@@ -126,7 +132,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     @IBAction func clearButtonPushed(sender: AnyObject) {
         textView.resignFirstResponder()
-        textView.contentOffset = CGPoint.init(x: 0, y: 0)
+        textView.contentOffset = CGPoint.init(x: 0, y: -textView.contentInset.top)
         textView.text = ""
         wornings = []
         update()
@@ -139,6 +145,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         if text.characters.count == 0 {
             return
         }
+        textView.attributedText = NSMutableAttributedString.init(string: textView.text, attributes: [NSFontAttributeName: UIFont.systemFontOfSize(17)])
         let request = NSMutableURLRequest.init(URL: NSURL.init(string: "http://160.16.211.54/")!)
         request.HTTPMethod = "POST"
         request.HTTPBody = text.dataUsingEncoding(NSUTF8StringEncoding)
@@ -229,7 +236,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         rect.origin.y -= textView.frame.height / 2
         rect.origin.x = 0
         textView.setContentOffset(rect.origin, animated: true)
-        let attributedText = NSMutableAttributedString.init(string: textView.text, attributes: [NSFontAttributeName: UIFont.systemFontOfSize(15)])
+        let attributedText = NSMutableAttributedString.init(string: textView.text, attributes: [NSFontAttributeName: UIFont.systemFontOfSize(17)])
         attributedText.addAttributes([
                 NSBackgroundColorAttributeName: UIColor.init(color: .HighlightMazenta)
             ], range: NSRange.init(location: index, length: 1))

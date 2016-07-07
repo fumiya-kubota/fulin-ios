@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "C114D6BE467FD437E49197C9035E45001E1C4E75",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "C114D6BE467FD437E49197C9035E45001E1C4E75" : 0,
+    "61DD55AF072758F4063A41E3DF02F8F7268F86F1" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "6CCD735B-2C0C-4ABF-98B5-6250144429BE",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "C114D6BE467FD437E49197C9035E45001E1C4E75" : "fulin-ios\/",
+    "61DD55AF072758F4063A41E3DF02F8F7268F86F1" : "delta-glucose\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "fulin-ios",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "fulin-ios.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:batch2\/delta-glucose.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "61DD55AF072758F4063A41E3DF02F8F7268F86F1"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:fumiya-kubota\/fulin-ios.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "C114D6BE467FD437E49197C9035E45001E1C4E75"
+    }
+  ]
+}

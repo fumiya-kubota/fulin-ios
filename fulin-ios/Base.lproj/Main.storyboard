@@ -37,7 +37,8 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vWf-K1-lk3">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4i2-G9-rBu">
@@ -98,7 +99,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.19988991918135235" green="1" blue="0.99943658523340351" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.5" green="1" blue="0.99943658523340351" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="4i2-G9-rBu" firstAttribute="top" secondItem="vWf-K1-lk3" secondAttribute="bottom" id="24Q-kJ-c35"/>
                             <constraint firstAttribute="trailing" secondItem="4i2-G9-rBu" secondAttribute="trailing" id="CUn-IT-6Wu"/>
