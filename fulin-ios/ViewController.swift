@@ -146,7 +146,7 @@ class ViewController: UIViewController, UITextViewDelegate, UITableViewDelegate,
             return
         }
         textView.attributedText = NSMutableAttributedString.init(string: textView.text, attributes: [NSFontAttributeName: UIFont.systemFontOfSize(17)])
-        let request = NSMutableURLRequest.init(URL: NSURL.init(string: "http://160.16.211.54/")!)
+        let request = NSMutableURLRequest.init(URL: NSURL.init(string: "https://fu-lin.xyz/check")!)
         request.HTTPMethod = "POST"
         request.HTTPBody = text.dataUsingEncoding(NSUTF8StringEncoding)
         let session = NSURLSession.init(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
@@ -158,6 +158,7 @@ class ViewController: UIViewController, UITextViewDelegate, UITableViewDelegate,
             guard let data_ = data else {
                 return
             }
+
             let array: [AnyObject] = try! NSJSONSerialization.JSONObjectWithData(data_, options: NSJSONReadingOptions.MutableContainers) as! [AnyObject]
             
             var wornings: [LintingWorning] = []
