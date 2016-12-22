@@ -11,7 +11,7 @@ import SVProgressHUD
 import UIKit
 
 enum Colors: Int {
-    case HighlightMazenta = 0xe4007f
+    case highlightMazenta = 0xe4007f
 }
 
 extension UIColor {
@@ -36,36 +36,36 @@ class LintingWorningCell: UITableViewCell {
     @IBOutlet weak var textView: UITextView!
     
     
-    class func height(lintingWorning: LintingWorning, width: CGFloat) -> CGFloat {
+    class func height(_ lintingWorning: LintingWorning, width: CGFloat) -> CGFloat {
         let textContainer = NSTextContainer.init()
         textContainer.lineFragmentPadding = 0
         let layoutManager = NSLayoutManager.init()
         layoutManager.addTextContainer(textContainer)
-        let containerSize = CGSizeMake(width - 8 * 2, 2000)
+        let containerSize = CGSize(width: width - 8 * 2, height: 2000)
         textContainer.size = containerSize;
         
         let textStorage = NSTextStorage.init(attributedString: NSAttributedString.init(string: lintingWorning.message, attributes: [
-            NSFontAttributeName: UIFont.systemFontOfSize(17)
+            NSFontAttributeName: UIFont.systemFont(ofSize: 17)
         ]))
         textStorage.addLayoutManager(layoutManager)
-        layoutManager .glyphRangeForTextContainer(textContainer)
-        let size = layoutManager .usedRectForTextContainer(textContainer).size
+        layoutManager .glyphRange(for: textContainer)
+        let size = layoutManager .usedRect(for: textContainer).size
         textStorage.removeLayoutManager(layoutManager)
         return 32 + size.height + 8
     }
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        textView.textContainerInset = UIEdgeInsetsZero
+        textView.textContainerInset = UIEdgeInsets.zero
         textView.textContainer.lineFragmentPadding = 0
         textView.textContainer.heightTracksTextView = false
         textView.textContainer.widthTracksTextView = false
     }
     
-    func update(lintingWorning: LintingWorning) {
+    func update(_ lintingWorning: LintingWorning) {
         label.text = "\(lintingWorning.line)行目, \(lintingWorning.column)カラム"
         textView.attributedText = NSAttributedString.init(string: lintingWorning.message, attributes: [
-            NSFontAttributeName: UIFont.systemFontOfSize(17)
+            NSFontAttributeName: UIFont.systemFont(ofSize: 17)
         ])
     }
 }
@@ -87,30 +87,30 @@ class ViewController: UIViewController, UITextViewDelegate, UITableViewDelegate,
         worningsTableView.delegate = self
         worningsTableView.dataSource = self
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.keyboardWillHidden(_:)), name: UIKeyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillHidden(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         
         textView.inputAccessoryView = keyboardView
     }
     
-    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
-        textView.typingAttributes = [NSFontAttributeName: UIFont.systemFontOfSize(17)]
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        textView.typingAttributes = [NSFontAttributeName: UIFont.systemFont(ofSize: 17)]
         return true
     }
 
-    @IBAction func pasteButtonPushed(sender: AnyObject) {
-        let pasteboard = UIPasteboard.generalPasteboard()
-        let text = pasteboard.valueForPasteboardType("public.text") as? String
+    @IBAction func pasteButtonPushed(_ sender: AnyObject) {
+        let pasteboard = UIPasteboard.general
+        let text = pasteboard.value(forPasteboardType: "public.text") as? String
     
         if textView.text.characters.count != 0 {
-            let alert = UIAlertController.init(title: "お知らせ", message: "今書いてあるものは消えちゃうよ！", preferredStyle: UIAlertControllerStyle.Alert)
-            alert.addAction(UIAlertAction.init(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
-            alert.addAction(UIAlertAction.init(title: "OK", style: UIAlertActionStyle.Default, handler: { _ in
+            let alert = UIAlertController.init(title: "お知らせ", message: "今書いてあるものは消えちゃうよ！", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction.init(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
+            alert.addAction(UIAlertAction.init(title: "OK", style: UIAlertActionStyle.default, handler: { _ in
                 self.textView.text = text
                 self.wornings = []
                 self.update()
             }))
-            self.presentViewController(alert, animated: true, completion: nil)
+            self.present(alert, animated: true, completion: nil)
         } else {
             textView.text = text
             self.wornings = []
@@ -118,19 +118,19 @@ class ViewController: UIViewController, UITextViewDelegate, UITableViewDelegate,
         }
     }
 
-    @IBAction func closeButtonPushed(sender: AnyObject) {
+    @IBAction func closeButtonPushed(_ sender: AnyObject) {
         textView.resignFirstResponder()
     }
 
-    @IBAction func copyButtonPushed(sender: AnyObject) {
-        let pasteboard = UIPasteboard.generalPasteboard()
+    @IBAction func copyButtonPushed(_ sender: AnyObject) {
+        let pasteboard = UIPasteboard.general
         pasteboard.setValue(textView.text, forPasteboardType: "public.text")
-        let alert = UIAlertController.init(title: "お知らせ", message: "クリップボードにコピーしたよ！", preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction.init(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
-        self.presentViewController(alert, animated: true, completion: nil)
+        let alert = UIAlertController.init(title: "お知らせ", message: "クリップボードにコピーしたよ！", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction.init(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 
-    @IBAction func clearButtonPushed(sender: AnyObject) {
+    @IBAction func clearButtonPushed(_ sender: AnyObject) {
         textView.resignFirstResponder()
         textView.contentOffset = CGPoint.init(x: 0, y: -textView.contentInset.top)
         textView.text = ""
@@ -138,29 +138,27 @@ class ViewController: UIViewController, UITextViewDelegate, UITableViewDelegate,
         update()
     }
 
-    @IBAction func checkButtonPushed(sender: AnyObject) {
+    @IBAction func checkButtonPushed(_ sender: AnyObject) {
         guard let text = textView.text else {
             return
         }
         if text.characters.count == 0 {
             return
         }
-        textView.attributedText = NSMutableAttributedString.init(string: textView.text, attributes: [NSFontAttributeName: UIFont.systemFontOfSize(17)])
-        let request = NSMutableURLRequest.init(URL: NSURL.init(string: "https://fu-lin.xyz/check")!)
-        request.HTTPMethod = "POST"
-        request.HTTPBody = text.dataUsingEncoding(NSUTF8StringEncoding)
-        let session = NSURLSession.init(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
+        textView.attributedText = NSMutableAttributedString.init(string: textView.text, attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 17)])
+        var request = URLRequest.init(url: URL.init(string: "https://fu-lin.xyz/check")!)
+        request.httpMethod = "POST"
+        request.httpBody = text.data(using: String.Encoding.utf8)
+        let session = URLSession.init(configuration: URLSessionConfiguration.default)
         textView.resignFirstResponder()
-        SVProgressHUD.setDefaultStyle(.Light)
-        SVProgressHUD.setDefaultMaskType(.Black)
+        SVProgressHUD.setDefaultStyle(.light)
+        SVProgressHUD.setDefaultMaskType(.black)
         SVProgressHUD.show()
-        let task = session.dataTaskWithRequest(request) { (data, response, error) in
+        let task = session.dataTask(with: request) { (data, response, error) in
             guard let data_ = data else {
                 return
             }
-
-            let array: [AnyObject] = try! NSJSONSerialization.JSONObjectWithData(data_, options: NSJSONReadingOptions.MutableContainers) as! [AnyObject]
-            
+            let array: [AnyObject] = try! JSONSerialization.jsonObject(with: data_, options: JSONSerialization.ReadingOptions.mutableContainers) as! [AnyObject]
             var wornings: [LintingWorning] = []
             for dict in array {
                 guard let line = dict["line"] as? Int else {
@@ -176,17 +174,16 @@ class ViewController: UIViewController, UITextViewDelegate, UITableViewDelegate,
             }
             self.wornings = wornings
             if wornings.count == 0 {
-                SVProgressHUD.showSuccessWithStatus("良いんじゃないでしょうか！")
-                SVProgressHUD.dismissWithDelay(0.8)
+                SVProgressHUD.showSuccess(withStatus: "良いんじゃないでしょうか！")
+                SVProgressHUD.dismiss(withDelay: 0.8)
             } else {
                 SVProgressHUD.dismiss()
             }
-
-            
-            dispatch_sync(dispatch_get_main_queue(), {
+            DispatchQueue.main.sync(execute: {
                 self.update()
             })
         }
+        
         task.resume()
     }
     
@@ -197,35 +194,35 @@ class ViewController: UIViewController, UITextViewDelegate, UITableViewDelegate,
         } else {
             worningsViewBottomSpace.constant = 0
         }
-        UIView.animateWithDuration(0.2) {
+        UIView.animate(withDuration: 0.2, animations: {
             self.view.layoutIfNeeded()
-        }
+        }) 
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return wornings.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! LintingWorningCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! LintingWorningCell
         cell.update(wornings[indexPath.row])
         return cell
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let lintingWorning = wornings[indexPath.row]
         return LintingWorningCell.height(lintingWorning, width: tableView.frame.width)
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let lintingWorning = wornings[indexPath.row]
         
         var numberOfLines = 1
         
         var index = 0
-        for pair in textView.text.characters.enumerate() {
+        for pair in textView.text.characters.enumerated() {
             if numberOfLines == lintingWorning.line {
-                index = pair.index + lintingWorning.column - 1
+                index = pair.offset + lintingWorning.column - 1
                 break
             }
             if pair.element == "\n" {
@@ -233,21 +230,21 @@ class ViewController: UIViewController, UITextViewDelegate, UITableViewDelegate,
             }
         }
         
-        var rect = textView.layoutManager.boundingRectForGlyphRange(NSRange.init(location: index, length: 1), inTextContainer: textView.textContainer)
+        var rect = textView.layoutManager.boundingRect(forGlyphRange: NSRange.init(location: index, length: 1), in: textView.textContainer)
         rect.origin.y -= textView.frame.height / 2
         rect.origin.x = 0
         textView.setContentOffset(rect.origin, animated: true)
-        let attributedText = NSMutableAttributedString.init(string: textView.text, attributes: [NSFontAttributeName: UIFont.systemFontOfSize(17)])
+        let attributedText = NSMutableAttributedString.init(string: textView.text, attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 17)])
         attributedText.addAttributes([
-                NSBackgroundColorAttributeName: UIColor.init(color: .HighlightMazenta)
+                NSBackgroundColorAttributeName: UIColor.init(color: .highlightMazenta)
             ], range: NSRange.init(location: index, length: 1))
         textView.attributedText = attributedText
         
     }
 
-    func keyboardWillShow(sender: NSNotification) {
-        let keyboardFrame = (sender.userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
-        let duration = (sender.userInfo![UIKeyboardAnimationDurationUserInfoKey] as! NSTimeInterval)
+    func keyboardWillShow(_ sender: Notification) {
+        let keyboardFrame = (sender.userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        let duration = (sender.userInfo![UIKeyboardAnimationDurationUserInfoKey] as! TimeInterval)
         let curve = UIViewAnimationCurve.init(rawValue: sender.userInfo![UIKeyboardAnimationCurveUserInfoKey] as! Int)
         UIView.beginAnimations("keyboardWillShow", context: nil)
         UIView.setAnimationCurve(curve!)
@@ -257,8 +254,8 @@ class ViewController: UIViewController, UITextViewDelegate, UITableViewDelegate,
         UIView.commitAnimations()
     }
     
-    func keyboardWillHidden(sender: NSNotification) {
-        let duration = (sender.userInfo![UIKeyboardAnimationDurationUserInfoKey] as! NSTimeInterval)
+    func keyboardWillHidden(_ sender: Notification) {
+        let duration = (sender.userInfo![UIKeyboardAnimationDurationUserInfoKey] as! TimeInterval)
         let curve = UIViewAnimationCurve.init(rawValue: sender.userInfo![UIKeyboardAnimationCurveUserInfoKey] as! Int)
         UIView.beginAnimations("keyboardWillShow", context: nil)
         UIView.setAnimationCurve(curve!)
